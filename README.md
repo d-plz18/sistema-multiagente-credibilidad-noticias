@@ -61,6 +61,12 @@ El agente de NewsAPI lee la clave de la variable de entorno `NEWSAPI_KEY`. Si no
 export NEWSAPI_KEY=tu_clave   # Windows PowerShell: $env:NEWSAPI_KEY="tu_clave"
 ```
 
+## Presentación
+
+[Presentación del proyecto (PPTX)](docs/presentacion.pptx): descripción del problema, objetivos, arquitectura y demo.
+
 ## Autores
 
-Trabajo en equipo de Diego Plaza ([@d-plz18](https://github.com/d-plz18)) junto con [@Herrervs](https://github.com/Herrervs), Eva Pombo, Irene Quesada, Álvaro Moreno y el resto del grupo. Repositorio original: [Herrervs/Practica-SSII](https://github.com/Herrervs/Practica-SSII).
+Trabajo en equipo: Diego Plaza ([@d-plz18](https://github.com/d-plz18)), Javier Herrera ([@Herrervs](https://github.com/Herrervs)), Eva Pombo, Álvaro Moreno e Irene Quesada.
+
+Repositorio original del grupo: [Herrervs/Practica-SSII](https://github.com/Herrervs/Practica-SSII).
