@@ -15,7 +15,9 @@ import practica.modelo.Noticia;
 public class ObtenerNoticiasAPIBehaviour extends TickerBehaviour {
 	private int contadorNoticias = 1;
     private String jsonGuardado = null; 
-    private static final String API_URL = "https://newsapi.org/v2/everything?q=spain&language=es&pageSize=20&apiKey=06c8e1c18cfa436bb1f4081508a8f9a2";
+    // La clave de NewsAPI se lee de la variable de entorno NEWSAPI_KEY
+    private static final String API_KEY = System.getenv("NEWSAPI_KEY");
+    private static final String API_URL = "https://newsapi.org/v2/everything?q=spain&language=es&pageSize=20&apiKey=" + API_KEY;
 
 	public ObtenerNoticiasAPIBehaviour(Agent agente, long periodo) {
 		super(agente, periodo);
@@ -42,6 +44,11 @@ public class ObtenerNoticiasAPIBehaviour extends TickerBehaviour {
     }
 
     private Noticia leerNoticiaDeAPI() {
+        if (API_KEY == null || API_KEY.isBlank()) {
+            System.err.println("[ADQUISICION-API] Variable de entorno NEWSAPI_KEY no definida, se omite la API.");
+            stop();
+            return null;
+        }
         try {
             if (jsonGuardado == null) {
                 HttpURLConnection conexion = (HttpURLConnection) new URI(API_URL).toURL().openConnection();

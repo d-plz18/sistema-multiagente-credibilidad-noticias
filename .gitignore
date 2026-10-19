@@ -2,3 +2,11 @@ JADE-all-4.6.0/
 es.upm.ejemplo/
 /bin/
 .idea/
+
+# Ficheros generados por JADE al ejecutar
+APDescription.txt
+MTPs-Main-Container.txt
+
+# Compilados
+*.class
+out/
